@@ -7,11 +7,11 @@ enum Task {
 	Walking
 }
 
+var CurrentTask = Task.Searching
 @export var walk_speed = 6
 @export var resource_generataion_amount = 0
 @export_enum("stone", "tree") var resource_name:String
 
-@export var CurrentTask = Task.Searching
 var Hut = null
 var held_resource_amount = 0
 var runOnce = true

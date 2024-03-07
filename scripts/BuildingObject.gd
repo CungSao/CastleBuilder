@@ -16,6 +16,7 @@ func run_spawn():
 	if spawn_actor:
 		var actor = Actor.instantiate()
 		current_actor = actor
+		actor.Hut = $SpawnPoint
 		get_tree().root.add_child(actor)
 		actor.global_position = $SpawnPoint.global_position
 	if IncreasePopCap:
