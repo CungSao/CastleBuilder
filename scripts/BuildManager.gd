@@ -31,6 +31,9 @@ func _process(_delta):
 			CurrentSpawnable = null
 			GameManager.CurrentState = GameManager.State.Play
 
+		if Input.is_action_just_released("MiddleMouseButton"):
+			CurrentSpawnable.rotation_degrees += Vector3(0,90,0)
+		
 	if GameManager.CurrentState == GameManager.State.Destroying:
 		if is_instance_valid(CurrentSpawnable):
 			CurrentSpawnable.queue_free()

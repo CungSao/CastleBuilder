@@ -17,8 +17,8 @@ func _process(_delta):
 	elif mousePos.y > viewportSize.y - min_distance_y:
 		global_position += global_basis.z
 	
-	if Input.is_action_just_released("MiddleMouseButton"):
-		rotation_degrees += Vector3(0,90,0)
+	#if Input.is_action_just_released("MiddleMouseButton"):
+		#rotation_degrees += Vector3(0,90,0)
 	if Input.is_action_just_released("MouseWheelUp"):
 		if $Camera3D.global_position.distance_to(global_position) > 10:
 			$Camera3D.global_position -= $Camera3D.global_basis.z
