@@ -9,6 +9,7 @@ func _process(_delta):
 	vbox.get_node("Food/Label").text = str(GameManager.Food)
 	vbox.get_node("Gold/Label").text = str(GameManager.Gold)
 	vbox2.get_node("Pop/Label").text = str(GameManager.AlvPopulation) + " / " + str(GameManager.MaxPopulation)
+	vbox2.get_node("Hap/Label").text = str(GameManager.Happiness)
 
 func _on_area_2d_area_entered(_area):
 	BuildManager.buildable = false

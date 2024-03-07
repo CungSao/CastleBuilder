@@ -58,7 +58,7 @@ func _process(_delta):
 			Food = 0
 		food_bool = true
 		Gold += round(Population * TaxRate)
-		var happiness_value = 0
+		var happiness_value = 1
 		if Food > 0:
 			happiness_value += 1
 		else:

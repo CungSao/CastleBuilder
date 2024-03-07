@@ -39,7 +39,7 @@ data = PackedVector3Array(-4.65, 4.5, 10, -0.35, 4.5, 10, -5, 2.8, 10, 0, 2.8, 0
 transform = Transform3D(10.048, 0, 0, 0, 10.048, 0, 0, 0, 10.048, 0, 0, 0)
 script = ExtResource("1_ni0ue")
 StoneCost = 5
-SpawnActor = false
+spawn_actor = false
 
 [node name="RootNode" type="Node3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
