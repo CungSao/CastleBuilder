@@ -92,7 +92,7 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_bottom = 31.0
 grow_horizontal = 2
-current_tab = 3
+current_tab = 4
 
 [node name="Industry" type="HBoxContainer" parent="Control/TabContainer"]
 visible = false
@@ -137,6 +137,7 @@ layout_mode = 2
 text = "House"
 
 [node name="Walls" type="HBoxContainer" parent="Control/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="BuildWallNarrow" type="Button" parent="Control/TabContainer/Walls"]
@@ -145,13 +146,46 @@ layout_mode = 2
 text = "Wall Narrow"
 
 [node name="Enconogy" type="HBoxContainer" parent="Control/TabContainer"]
-visible = false
 layout_mode = 2
 
-[node name="BuildWoodCutterButton" type="Button" parent="Control/TabContainer/Enconogy"]
-custom_minimum_size = Vector2(130, 80)
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/TabContainer/Enconogy"]
+custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
-text = "Wood Cutters"
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TaxRate" type="Label" parent="Control/TabContainer/Enconogy/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "Tax"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/TabContainer/Enconogy/HBoxContainer/TaxRate"]
+layout_mode = 2
+offset_left = 33.0
+offset_right = 56.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2%"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/TabContainer/Enconogy/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Button" type="Button" parent="Control/TabContainer/Enconogy/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "+"
+
+[node name="Button2" type="Button" parent="Control/TabContainer/Enconogy/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "-"
 
 [node name="Market" type="HBoxContainer" parent="Control/TabContainer"]
 visible = false
@@ -423,7 +457,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0, 1.5529)
 [connection signal="button_down" from="Control/TabContainer/Food/Orchard" to="Control" method="_on_orchard_button_down"]
 [connection signal="button_down" from="Control/TabContainer/Living/BuildHouse" to="Control" method="_on_build_house_button_down"]
 [connection signal="button_down" from="Control/TabContainer/Walls/BuildWallNarrow" to="Control" method="_on_build_wall_narrow_button_down"]
-[connection signal="button_down" from="Control/TabContainer/Enconogy/BuildWoodCutterButton" to="Control" method="_on_build_wood_cutter_button_button_down"]
+[connection signal="button_down" from="Control/TabContainer/Enconogy/HBoxContainer/HBoxContainer/Button" to="Control" method="_on_IncreateTaxes_button_down"]
+[connection signal="button_down" from="Control/TabContainer/Enconogy/HBoxContainer/HBoxContainer/Button2" to="Control" method="_on_DecreaseTaxes_button_down"]
 [connection signal="button_down" from="Control/TabContainer/Market/BuildWoodCutterButton" to="Control" method="_on_build_wood_cutter_button_button_down"]
 [connection signal="area_entered" from="Control/Area2D" to="Control" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Control/Area2D" to="Control" method="_on_area_2d_area_exited"]

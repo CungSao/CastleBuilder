@@ -10,6 +10,7 @@ func _process(_delta):
 	vbox.get_node("Gold/Label").text = str(GameManager.Gold)
 	vbox2.get_node("Pop/Label").text = str(GameManager.AlvPopulation) + " / " + str(GameManager.MaxPopulation)
 	vbox2.get_node("Hap/Label").text = str(GameManager.Happiness)
+	$TabContainer/Enconogy/HBoxContainer/TaxRate/Label2.text = str(GameManager.TaxRate) + "%"
 
 func _on_area_2d_area_entered(_area):
 	BuildManager.buildable = false
@@ -41,3 +42,9 @@ func _on_build_wall_narrow_button_down():
 func _on_destroy_pressed():
 	print('click')
 	GameManager.CurrentState = GameManager.State.Destroying
+
+func _on_IncreateTaxes_button_down():
+	GameManager.TaxRate += 2
+
+func _on_DecreaseTaxes_button_down():
+	GameManager.TaxRate -= 2
