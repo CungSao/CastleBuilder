@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1wfkg1nuvoi"]
+
+[ext_resource type="Script" path="res://scripts/actor/ResourceGatherer.gd" id="1_k7voa"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2m5ep"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jc7jw"]
+
+[node name="WoodCutter" type="CharacterBody3D"]
+script = ExtResource("1_k7voa")
+resource_generataion_amount = 5
+resource_name = "tree"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_2m5ep")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_jc7jw")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.67546, 0)
+pixel_size = 0.03
+billboard = 1
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.800491, 0.800491, 0.800491, 1)
+text = "test"

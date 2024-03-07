@@ -1,0 +1,411 @@
+[gd_scene load_steps=21 format=3 uid="uid://cgqlrv0hup7pp"]
+
+[ext_resource type="Script" path="res://scripts/Camera.gd" id="1_f0lxf"]
+[ext_resource type="Script" path="res://scripts/test_scene.gd" id="1_y6cid"]
+[ext_resource type="Script" path="res://scripts/InterfaceManager.gd" id="2_1byys"]
+[ext_resource type="Script" path="res://scripts/MouseArea.gd" id="3_oyl1c"]
+[ext_resource type="PackedScene" uid="uid://bp5lo4ncde4wy" path="res://assets/CastleKeep.tscn" id="5_khp0t"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mx4r4"]
+
+[sub_resource type="Sky" id="Sky_yxn1b"]
+sky_material = SubResource("ProceduralSkyMaterial_mx4r4")
+radiance_size = 2
+
+[sub_resource type="Environment" id="Environment_0su02"]
+background_mode = 2
+sky = SubResource("Sky_yxn1b")
+tonemap_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bp7df"]
+size = Vector2(1152, 161)
+
+[sub_resource type="InputEventAction" id="InputEventAction_ubfdb"]
+action = &"delete"
+
+[sub_resource type="Shortcut" id="Shortcut_bu8kg"]
+events = [SubResource("InputEventAction_ubfdb")]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n7jtq"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_xp6we"]
+vertices = PackedVector3Array(-2.11085, 0.5, -5.11085, 4.38915, 0.5, -7.36085, 4.38915, 0.5, -8.61085, -3.11085, 0.5, -5.11085, -32.8609, 0.5, -3.86085, -3.61085, 0.5, -3.86085, -3.11085, 0.5, -5.11085, 5.38915, 0.5, -32.8609, -32.8609, 0.5, -32.8609, -3.11085, 0.5, -5.11085, 4.38915, 0.5, -8.61085, 5.38915, 0.5, -9.11085, 5.38915, 0.5, -32.8609, 5.38915, 0.5, -32.8609, 5.38915, 0.5, -9.11085, 6.13915, 0.5, -9.11085, 5.38915, 0.5, -32.8609, 6.13915, 0.5, -9.11085, 6.63915, 0.5, -8.11085, 32.8891, 0.5, -8.11085, 32.8891, 0.5, -32.8609, 5.88915, 0.5, -6.86085, 6.13915, 0.5, 3.38915, 7.13915, 0.5, 3.38915, 6.63915, 0.5, -7.36085, 6.63915, 0.5, -7.36085, 7.13915, 0.5, 3.38915, 7.38915, 0.5, 3.88915, 32.8891, 0.5, 3.88915, 32.8891, 0.5, -8.11085, 6.63915, 0.5, -8.11085, 4.38915, 0.5, -7.36085, -2.11085, 0.5, -5.11085, -1.36085, 0.5, -4.61085, 4.63915, 0.5, -6.86085, 4.38915, 0.5, -7.36085, -1.36085, 0.5, -4.61085, -1.36085, 0.5, -3.36085, 4.63915, 0.5, -6.86085, -1.36085, 0.5, -3.36085, -2.11085, 0.5, -2.86085, 5.38915, 0.5, 3.88915, 6.13915, 0.5, 3.38915, 5.88915, 0.5, -6.86085, -9.36085, 0.5, 9.38915, -8.36085, 0.5, 9.38915, -3.61085, 0.5, -3.36085, -9.36085, 0.5, 9.38915, -3.61085, 0.5, -3.36085, -3.61085, 0.5, -3.86085, -32.8609, 0.5, -3.86085, -32.8609, 0.5, 10.3891, -9.86085, 0.5, 10.3891, 7.63915, 0.5, 10.8891, 7.38915, 0.5, 5.38915, 5.63915, 0.5, 5.63915, 7.13915, 0.5, 11.6391, 7.63915, 0.5, 10.8891, 5.63915, 0.5, 5.63915, 5.13915, 0.5, 4.88915, -7.61085, 0.5, 11.1391, -8.11085, 0.5, 11.6391, -3.36085, 0.5, -2.86085, -3.61085, 0.5, -3.36085, -8.36085, 0.5, 9.38915, -7.61085, 0.5, 9.63915, 5.13915, 0.5, 4.88915, 5.38915, 0.5, 3.88915, -2.11085, 0.5, -2.86085, -3.36085, 0.5, -2.86085, -7.61085, 0.5, 9.63915, -7.61085, 0.5, 11.1391, 7.38915, 0.5, 5.38915, 7.63915, 0.5, 10.8891, 8.88915, 0.5, 10.8891, 7.38915, 0.5, 5.38915, 8.88915, 0.5, 10.8891, 9.38915, 0.5, 12.1391, 32.8891, 0.5, 12.1391, 32.8891, 0.5, 3.88915, 7.38915, 0.5, 3.88915, -8.86085, 0.5, 32.8891, -8.86085, 0.5, 11.6391, -9.86085, 0.5, 11.1391, -32.8609, 0.5, 10.3891, -32.8609, 0.5, 32.8891, -9.86085, 0.5, 11.1391, -9.86085, 0.5, 10.3891, -32.8609, 0.5, 10.3891, 7.13915, 0.5, 12.8891, 7.13915, 0.5, 11.6391, -8.11085, 0.5, 11.6391, 7.13915, 0.5, 12.8891, -8.11085, 0.5, 11.6391, -8.86085, 0.5, 11.6391, -8.86085, 0.5, 32.8891, 8.13915, 0.5, 32.8891, 8.13915, 0.5, 13.1391, 8.88915, 0.5, 13.1391, 8.13915, 0.5, 13.1391, 8.13915, 0.5, 32.8891, 9.38915, 0.5, 12.1391, 8.88915, 0.5, 13.1391, 8.13915, 0.5, 32.8891, 32.8891, 0.5, 32.8891, 32.8891, 0.5, 12.1391)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 8), PackedInt32Array(6, 8, 7), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 12), PackedInt32Array(15, 14, 13), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(19, 16, 20), PackedInt32Array(22, 21, 23), PackedInt32Array(23, 21, 24), PackedInt32Array(26, 25, 27), PackedInt32Array(27, 25, 30), PackedInt32Array(27, 30, 28), PackedInt32Array(28, 30, 29), PackedInt32Array(33, 32, 31), PackedInt32Array(35, 34, 36), PackedInt32Array(36, 34, 37), PackedInt32Array(39, 38, 40), PackedInt32Array(40, 38, 43), PackedInt32Array(40, 43, 42), PackedInt32Array(40, 42, 41), PackedInt32Array(46, 45, 44), PackedInt32Array(48, 47, 49), PackedInt32Array(49, 47, 52), PackedInt32Array(49, 52, 51), PackedInt32Array(49, 51, 50), PackedInt32Array(55, 54, 53), PackedInt32Array(57, 56, 58), PackedInt32Array(58, 56, 59), PackedInt32Array(59, 56, 60), PackedInt32Array(60, 56, 61), PackedInt32Array(65, 64, 62), PackedInt32Array(62, 64, 63), PackedInt32Array(67, 66, 68), PackedInt32Array(68, 66, 69), PackedInt32Array(69, 66, 70), PackedInt32Array(70, 66, 71), PackedInt32Array(74, 73, 72), PackedInt32Array(76, 75, 77), PackedInt32Array(77, 75, 80), PackedInt32Array(77, 80, 78), PackedInt32Array(78, 80, 79), PackedInt32Array(82, 81, 83), PackedInt32Array(83, 81, 85), PackedInt32Array(83, 85, 84), PackedInt32Array(88, 87, 86), PackedInt32Array(91, 90, 89), PackedInt32Array(93, 92, 94), PackedInt32Array(94, 92, 97), PackedInt32Array(94, 97, 96), PackedInt32Array(94, 96, 95), PackedInt32Array(100, 99, 98), PackedInt32Array(102, 101, 103), PackedInt32Array(103, 101, 105), PackedInt32Array(103, 105, 104)]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cwwx0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_60t1v"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wy84p"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_e2tjw"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vvlhe"]
+height = 0.780875
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cq05p"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bj1hr"]
+
+[node name="TestScene" type="Node3D"]
+script = ExtResource("1_y6cid")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_color = Color(0.501407, 0.501406, 0.501406, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0su02")
+
+[node name="CameraRig" type="Node3D" parent="."]
+script = ExtResource("1_f0lxf")
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 6.6851, 7.59093)
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_1byys")
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TabContainer" type="TabContainer" parent="Control"]
+custom_minimum_size = Vector2(700, 100)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_bottom = 31.0
+grow_horizontal = 2
+current_tab = 3
+
+[node name="Industry" type="HBoxContainer" parent="Control/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="BuildStockpile" type="Button" parent="Control/TabContainer/Industry"]
+custom_minimum_size = Vector2(130, 80)
+layout_mode = 2
+text = "Build Stockpile"
+
+[node name="BuildWoodCutter" type="Button" parent="Control/TabContainer/Industry"]
+custom_minimum_size = Vector2(130, 80)
+layout_mode = 2
+text = "Wood Cutters"
+
+[node name="BuildStoneCutter" type="Button" parent="Control/TabContainer/Industry"]
+custom_minimum_size = Vector2(130, 80)
+layout_mode = 2
+text = "Stone Cutter"
+
+[node name="Food" type="HBoxContainer" parent="Control/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Granery" type="Button" parent="Control/TabContainer/Food"]
+custom_minimum_size = Vector2(130, 80)
+layout_mode = 2
+text = "Granery"
+
+[node name="Orchard" type="Button" parent="Control/TabContainer/Food"]
+custom_minimum_size = Vector2(130, 80)
+layout_mode = 2
+text = "Orchard"
+
+[node name="Living" type="HBoxContainer" parent="Control/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="BuildHouse" type="Button" parent="Control/TabContainer/Living"]
+custom_minimum_size = Vector2(130, 80)
+layout_mode = 2
+text = "House"
+
+[node name="Walls" type="HBoxContainer" parent="Control/TabContainer"]
+layout_mode = 2
+
+[node name="BuildWallNarrow" type="Button" parent="Control/TabContainer/Walls"]
+custom_minimum_size = Vector2(130, 80)
+layout_mode = 2
+text = "Wall Narrow"
+
+[node name="Enconogy" type="HBoxContainer" parent="Control/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="BuildWoodCutterButton" type="Button" parent="Control/TabContainer/Enconogy"]
+custom_minimum_size = Vector2(130, 80)
+layout_mode = 2
+text = "Wood Cutters"
+
+[node name="Market" type="HBoxContainer" parent="Control/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="BuildWoodCutterButton" type="Button" parent="Control/TabContainer/Market"]
+custom_minimum_size = Vector2(130, 80)
+layout_mode = 2
+text = "Wood Cutters"
+
+[node name="Area2D" type="Area2D" parent="Control"]
+position = Vector2(575, 49)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_bp7df")
+
+[node name="Control" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Control"]
+layout_mode = 2
+offset_left = 10.0
+offset_right = 60.0
+offset_bottom = 99.0
+theme_override_constants/separation = -4
+
+[node name="Wood" type="Label" parent="Control/Control/VBoxContainer"]
+layout_mode = 2
+text = "Wood:"
+
+[node name="Label" type="Label" parent="Control/Control/VBoxContainer/Wood"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 33.0
+offset_top = -11.5
+offset_right = 83.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "100"
+
+[node name="Stone" type="Label" parent="Control/Control/VBoxContainer"]
+layout_mode = 2
+text = "Stone:"
+
+[node name="Label" type="Label" parent="Control/Control/VBoxContainer/Stone"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 33.0
+offset_top = -11.5
+offset_right = 83.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "100"
+
+[node name="Food" type="Label" parent="Control/Control/VBoxContainer"]
+layout_mode = 2
+text = "Food:"
+
+[node name="Label" type="Label" parent="Control/Control/VBoxContainer/Food"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 33.0
+offset_top = -11.5
+offset_right = 83.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "100"
+
+[node name="Gold" type="Label" parent="Control/Control/VBoxContainer"]
+layout_mode = 2
+text = "Gold:"
+
+[node name="Label" type="Label" parent="Control/Control/VBoxContainer/Gold"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 33.0
+offset_top = -11.5
+offset_right = 83.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "100"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/Control"]
+layout_mode = 2
+offset_left = 114.0
+offset_right = 164.0
+offset_bottom = 99.0
+theme_override_constants/separation = -4
+
+[node name="Pop" type="Label" parent="Control/Control/VBoxContainer2"]
+layout_mode = 2
+text = "Pop:"
+
+[node name="Label" type="Label" parent="Control/Control/VBoxContainer2/Pop"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 33.0
+offset_top = -11.5
+offset_right = 83.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1/20"
+
+[node name="Destroy" type="Button" parent="Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+shortcut = SubResource("Shortcut_bu8kg")
+text = "D"
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_oyl1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_n7jtq")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." groups=["NavMesh"]]
+navigation_mesh = SubResource("NavigationMesh_xp6we")
+
+[node name="TestFloor" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/TestFloor"]
+transform = Transform3D(66.7217, 0, 0, 0, 1, 0, 0, 0, 66.7217, 0, 0, 0)
+shape = SubResource("BoxShape3D_cwwx0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/TestFloor"]
+transform = Transform3D(66.7217, 0, 0, 0, 1, 0, 0, 0, 66.7217, 0, 0, 0)
+mesh = SubResource("BoxMesh_60t1v")
+
+[node name="Tree" type="StaticBody3D" parent="NavigationRegion3D" groups=["tree"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5438, 3, 16.9429)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Tree"]
+transform = Transform3D(1, 0, 0, 0, 4.03103, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CylinderMesh_wy84p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Tree"]
+transform = Transform3D(1, 0, 0, 0, 4.03103, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_e2tjw")
+
+[node name="Tree2" type="StaticBody3D" parent="NavigationRegion3D" groups=["tree"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2924, 3, -3.47207)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Tree2"]
+transform = Transform3D(1, 0, 0, 0, 4.03103, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CylinderMesh_wy84p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Tree2"]
+transform = Transform3D(1, 0, 0, 0, 4.03103, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_e2tjw")
+
+[node name="Tree3" type="StaticBody3D" parent="NavigationRegion3D" groups=["tree"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.61696, 3, 17.3153)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Tree3"]
+transform = Transform3D(1, 0, 0, 0, 4.03103, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CylinderMesh_wy84p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Tree3"]
+transform = Transform3D(1, 0, 0, 0, 4.03103, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_e2tjw")
+
+[node name="Tree4" type="StaticBody3D" parent="NavigationRegion3D" groups=["tree"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1569, 3, -10.7362)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Tree4"]
+transform = Transform3D(1, 0, 0, 0, 4.03103, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CylinderMesh_wy84p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Tree4"]
+transform = Transform3D(1, 0, 0, 0, 4.03103, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_e2tjw")
+
+[node name="StonePile" type="StaticBody3D" parent="NavigationRegion3D" groups=["stone"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.38032, -0.262425, 4.517)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StonePile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386575, 0)
+shape = SubResource("CylinderShape3D_vvlhe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StonePile"]
+transform = Transform3D(1, 0, 0, 0, 0.394085, 0, 0, 0, 1, 0, 0.392038, 0)
+mesh = SubResource("CylinderMesh_cq05p")
+
+[node name="CastleKeep" parent="." instance=ExtResource("5_khp0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.835406, 0, -9.17573)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CastleKeep"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44721, 0, 9.10878)
+mesh = SubResource("BoxMesh_bj1hr")
+
+[node name="Marker3D" type="Marker3D" parent="CastleKeep/MeshInstance3D" groups=["citizen_spawn_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52303, 0, 0)
+
+[node name="Marker3D2" type="Marker3D" parent="CastleKeep/MeshInstance3D" groups=["citizen_spawn_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48656, 0, 0)
+
+[node name="Marker3D3" type="Marker3D" parent="CastleKeep/MeshInstance3D" groups=["citizen_spawn_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0299548, 0, -1.48013)
+
+[node name="Marker3D4" type="Marker3D" parent="CastleKeep/MeshInstance3D" groups=["citizen_spawn_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0, 1.5529)
+
+[connection signal="button_down" from="Control/TabContainer/Industry/BuildStockpile" to="Control" method="_on_build_stockpile_button_down"]
+[connection signal="button_down" from="Control/TabContainer/Industry/BuildWoodCutter" to="Control" method="_on_build_wood_cutter_button_down"]
+[connection signal="button_down" from="Control/TabContainer/Industry/BuildStoneCutter" to="Control" method="_on_build_stone_cutter_button_down"]
+[connection signal="button_down" from="Control/TabContainer/Food/Granery" to="Control" method="_on_granery_button_down"]
+[connection signal="button_down" from="Control/TabContainer/Food/Orchard" to="Control" method="_on_orchard_button_down"]
+[connection signal="button_down" from="Control/TabContainer/Living/BuildHouse" to="Control" method="_on_build_house_button_down"]
+[connection signal="button_down" from="Control/TabContainer/Walls/BuildWallNarrow" to="Control" method="_on_build_wall_narrow_button_down"]
+[connection signal="button_down" from="Control/TabContainer/Enconogy/BuildWoodCutterButton" to="Control" method="_on_build_wood_cutter_button_button_down"]
+[connection signal="button_down" from="Control/TabContainer/Market/BuildWoodCutterButton" to="Control" method="_on_build_wood_cutter_button_button_down"]
+[connection signal="area_entered" from="Control/Area2D" to="Control" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Control/Area2D" to="Control" method="_on_area_2d_area_exited"]
+[connection signal="pressed" from="Control/Destroy" to="Control" method="_on_destroy_pressed"]
