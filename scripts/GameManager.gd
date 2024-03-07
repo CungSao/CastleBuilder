@@ -8,6 +8,7 @@ enum State{
 
 var CurrentState = State.Play
 
+var Iron = 20
 var Wood = 20
 var Stone = 20
 var Gold = 100
@@ -26,6 +27,7 @@ var occupied_fire_pit_spaces:Array
 @onready var Citizen:PackedScene = ResourceLoader.load("res://Scenes/citizen.tscn")
 
 func start():
+	Iron = 20
 	Wood = 20
 	Stone = 20
 	Gold = 100

@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://cgqlrv0hup7pp"]
+[gd_scene load_steps=22 format=3 uid="uid://cgqlrv0hup7pp"]
 
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="1_f0lxf"]
 [ext_resource type="Script" path="res://scripts/test_scene.gd" id="1_y6cid"]
 [ext_resource type="Script" path="res://scripts/InterfaceManager.gd" id="2_1byys"]
 [ext_resource type="Script" path="res://scripts/MouseArea.gd" id="3_oyl1c"]
+[ext_resource type="PackedScene" uid="uid://g45wqyqsa0r8" path="res://market.tscn" id="4_r6p1v"]
 [ext_resource type="PackedScene" uid="uid://bp5lo4ncde4wy" path="res://assets/CastleKeep.tscn" id="5_khp0t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mx4r4"]
@@ -92,7 +93,7 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_bottom = 31.0
 grow_horizontal = 2
-current_tab = 4
+current_tab = 5
 
 [node name="Industry" type="HBoxContainer" parent="Control/TabContainer"]
 visible = false
@@ -146,6 +147,7 @@ layout_mode = 2
 text = "Wall Narrow"
 
 [node name="Enconogy" type="HBoxContainer" parent="Control/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/TabContainer/Enconogy"]
@@ -187,14 +189,15 @@ custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 text = "-"
 
-[node name="Market" type="HBoxContainer" parent="Control/TabContainer"]
-visible = false
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer"]
 layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
 
-[node name="BuildWoodCutterButton" type="Button" parent="Control/TabContainer/Market"]
-custom_minimum_size = Vector2(130, 80)
+[node name="Market" parent="Control/TabContainer/MarginContainer" instance=ExtResource("4_r6p1v")]
 layout_mode = 2
-text = "Wood Cutters"
 
 [node name="Area2D" type="Area2D" parent="Control"]
 position = Vector2(575, 49)
@@ -459,7 +462,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0, 1.5529)
 [connection signal="button_down" from="Control/TabContainer/Walls/BuildWallNarrow" to="Control" method="_on_build_wall_narrow_button_down"]
 [connection signal="button_down" from="Control/TabContainer/Enconogy/HBoxContainer/HBoxContainer/Button" to="Control" method="_on_IncreateTaxes_button_down"]
 [connection signal="button_down" from="Control/TabContainer/Enconogy/HBoxContainer/HBoxContainer/Button2" to="Control" method="_on_DecreaseTaxes_button_down"]
-[connection signal="button_down" from="Control/TabContainer/Market/BuildWoodCutterButton" to="Control" method="_on_build_wood_cutter_button_button_down"]
 [connection signal="area_entered" from="Control/Area2D" to="Control" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Control/Area2D" to="Control" method="_on_area_2d_area_exited"]
 [connection signal="pressed" from="Control/Destroy" to="Control" method="_on_destroy_pressed"]

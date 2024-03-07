@@ -1,0 +1,166 @@
+[gd_scene load_steps=2 format=3 uid="uid://g45wqyqsa0r8"]
+
+[ext_resource type="Script" path="res://scripts/market.gd" id="1_y574i"]
+
+[node name="Market" type="HBoxContainer"]
+theme_override_constants/separation = 40
+script = ExtResource("1_y574i")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(180, 30)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+text = "Food:"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "100"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+alignment = 2
+
+[node name="SellFood" type="Button" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Sell"
+
+[node name="BuyFood" type="Button" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Buy"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(160, 30)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+text = "Iron:"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2/Label"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "100"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="SellIron" type="Button" parent="VBoxContainer/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "Sell"
+
+[node name="BuyIron" type="Button" parent="VBoxContainer/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "Buy"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(180, 30)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+text = "Stone:"
+
+[node name="Label2" type="Label" parent="VBoxContainer2/HBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "100"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+alignment = 2
+
+[node name="SellStone" type="Button" parent="VBoxContainer2/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Sell"
+
+[node name="BuyStone" type="Button" parent="VBoxContainer2/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Buy"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(160, 30)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+text = "Wood:"
+
+[node name="Label2" type="Label" parent="VBoxContainer2/HBoxContainer2/Label"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "100"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+
+[node name="SellWood" type="Button" parent="VBoxContainer2/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "Sell"
+
+[node name="BuyWood" type="Button" parent="VBoxContainer2/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "Buy"
+
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/HBoxContainer/SellFood" to="." method="_on_sell_food_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/HBoxContainer/BuyFood" to="." method="_on_buy_food_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer2/HBoxContainer/SellIron" to="." method="_on_sell_iron_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer2/HBoxContainer/BuyIron" to="." method="_on_buy_iron_button_down"]
+[connection signal="button_down" from="VBoxContainer2/HBoxContainer/HBoxContainer/SellStone" to="." method="_on_sell_stone_button_down"]
+[connection signal="button_down" from="VBoxContainer2/HBoxContainer/HBoxContainer/BuyStone" to="." method="_on_buy_stone_button_down"]
+[connection signal="button_down" from="VBoxContainer2/HBoxContainer2/HBoxContainer/SellWood" to="." method="_on_sell_wood_button_down"]
+[connection signal="button_down" from="VBoxContainer2/HBoxContainer2/HBoxContainer/BuyWood" to="." method="_on_buy_wood_button_down"]
